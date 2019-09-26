@@ -3,7 +3,7 @@ name: CI
 on:
   push:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '50 4 * * *'
 jobs:
   build:
 
@@ -17,3 +17,9 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+
+    - master
+    - release/*
+or only run on pull_request events that target the master branch:
+
+on:
