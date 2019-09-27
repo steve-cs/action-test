@@ -11,111 +11,16 @@ jobs:
         entrypoint: bash
         args: -c "
               echo Hello World
+              && echo PWD = $PWD
+              && echo HOME = $HOME
               && export DEBIAN_FRONTEND=noninteractive
+              && mkdir -p $HOME
+              && cd $HOME
               && apt-get update
               && apt-get -qq -y install git make
               && git clone https://github.com/steve-cs/gnat-builder.git
-              && cp gnat-builder/Makefile .
+              && cd gnat-builder
+              && make prefix=/usr/local release
+              && which gcc
+              && gcc -v
               "
-    - name: Depends
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n depends
-
-    - name: GCC
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gcc gcc-install
-
-    - name: GPRbuild bootstrap
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gprbuild-bootstrap-install 
-
-    - name: XML/Ada
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n xmlada xmlada-install
-
-    - name: GPRBUILD
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gprbuild gprbuild-install
-
-    - name: GNATColl core
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-core gnatcoll-core-install
-
-    - name: GNATColl bindings
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-bindings gnatcoll-bindings-install
-
-    - name: GNATColl
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-sql gnatcoll-sql-install
-
-    - name: GNATColl db
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-db-build
-
-    - name: GNATColl gnatcoll_db2ada
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-gnatcoll_db2ada gnatcoll-gnatcoll_db2ada-install
-
-    - name: GNATColl sqlite
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-sqlite gnatcoll-sqlite-install
-
-    - name: GNATColl xref
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-xref gnatcoll-xref-install
-
-    - name: GNATColl gnatinspect
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gnatcoll-gnatinspect gnatcoll-gnatinspect-install
-              
-    - name: LibAdaLang
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n libadalang libadalang-install
-
-    - name: GTKAda
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gtkada gtkada-install
-
-    - name: GPS
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n gps gps-install
-
-    - name: SPARK 2014
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: make
-        args: -n spark2014 spark2014-install
- 
