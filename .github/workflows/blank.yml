@@ -1,23 +1,18 @@
 name: CI
-
 on: 
   push:
 jobs:
   job1:
     runs-on: ubuntu-18.04
     steps:
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Echo
-      uses: docker://ubuntu:19.04
+    - name: 
+      uses: docker://ubuntu:18.04
       with:
-        entrypoint: /bin/bash
+        entrypoint: bash
         args: -c "
               echo Hello World
+              && echo PWD = $PWD
+              && echo HOME = $HOME
               && export DEBIAN_FRONTEND=noninteractive
               && mkdir -p $HOME
               && cd $HOME
