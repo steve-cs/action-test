@@ -14,19 +14,4 @@ jobs:
         echo test, and deploy your project.
     - name: Environment
       uses: docker://ubuntu:19.04
-      run: |
-        uname -a
-        echo $PWD
-        ls -lR
-        ls -l /
-        ls -lR /github
-    - name: Inside a docker container
-      uses: docker://ubuntu:19.04
-      run: |
-        uname -a
-        echo $PWD
-        ls -lR
-        ls -l /
-        ls -lR /github
       
-    
