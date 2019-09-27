@@ -96,21 +96,25 @@ jobs:
         args: -n gnatcoll-gnatinspect gnatcoll-gnatinspect-install
               
     - name: LibAdaLang
+      uses: docker://ubuntu:18.04
       with:
         entrypoint: make
         args: -n libadalang libadalang-install
 
     - name: GTKAda
+      uses: docker://ubuntu:18.04
       with:
         entrypoint: make
         args: -n gtkada gtkada-install
 
     - name: GPS
+      uses: docker://ubuntu:18.04
       with:
         entrypoint: make
         args: -n gps gps-install
 
     - name: SPARK 2014
+      uses: docker://ubuntu:18.04
       with:
         entrypoint: make
         args: -n spark2014 spark2014-install
