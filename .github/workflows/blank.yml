@@ -2,24 +2,31 @@ name: CI
 
 on: 
   push:
-  schedule:
-    - cron:  '0 * * * *'
 jobs:
-  build:
-
+  job1:
     runs-on: ubuntu-18.04
-    
     steps:
-    - uses: actions/checkout@v1
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-
-    - master
-    - release/*
-or only run on pull_request events that target the master branch:
-
-on:
+    - name: Environment
+      uses: docker://ubuntu:19.04
+      run: |
+        uname -a
+        echo $PWD
+        ls -lR
+        ls -l /
+        ls -lR /github
+    - name: Inside a docker container
+      uses: docker://ubuntu:19.04
+      run: |
+        uname -a
+        echo $PWD
+        ls -lR
+        ls -l /
+        ls -lR /github
+      
+    
