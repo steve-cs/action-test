@@ -4,9 +4,13 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-18.04
-    container: docker://ubuntu:18.04
+    container: 
+      image: docker://ubuntu:18.04
+    env:
+      DEBIAN_FRONTEND: noninteractive
     steps:
     - run: echo Hello World
+    - run: echo $DEBIAN_FRONTEND
     - run: touch bozo
     - run: ls -l .
     - run: touch /usr/local/bozo
