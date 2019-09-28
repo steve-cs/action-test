@@ -3,24 +3,10 @@ on:
   push:
 jobs:
   job1:
-    runs-on: ubuntu-18.04
+    container: docker://ubuntu:18.04
     steps:
-    - name: 
-      uses: docker://ubuntu:18.04
-      with:
-        entrypoint: bash
-        args: -c "
-              echo Hello World
-              && echo PWD = $PWD
-              && echo HOME = $HOME
-              && export DEBIAN_FRONTEND=noninteractive
-              && mkdir -p $HOME
-              && cd $HOME
-              && apt-get update
-              && apt-get -qq -y install git make
-              && git clone https://github.com/steve-cs/gnat-builder.git
-              && cd gnat-builder
-              && make prefix=/usr/local base-depends release
-              && which gcc
-              && gcc -v
-              "
+    - run: echo Hello World
+    - run: touch bozo
+    - run: ls -l .
+    - run: touch /usr/local/bozo
+    - run: ls -l /usr/local/bozo
