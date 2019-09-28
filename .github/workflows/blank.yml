@@ -10,9 +10,9 @@ jobs:
       DEBIAN_FRONTEND: noninteractive
     steps:
     - name: First Step
-      run: apt-get update
-      run: apt-get -qq -y install git make
-      run: git clone https://github.com/steve-cs/gnat-builder.git
-      run: cd gnat-builder
-      run: make depends
-      
+      run: |
+        apt-get update
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cd gnat-builder
+        make depends
