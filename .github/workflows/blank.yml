@@ -16,7 +16,7 @@ jobs:
         apt-get update
         apt-get -qq -y install git make
         git clone https://github.com/steve-cs/gnat-builder.git
-        cp gnat-builder/Makefile .
+        cp -r gnat-builder/* .
 
     - name: Depends
       run: make depends
