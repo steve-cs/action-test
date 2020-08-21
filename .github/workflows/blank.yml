@@ -7,7 +7,7 @@ jobs:
   job1:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:18.04
+      image: docker://ubuntu:20.04
     env:
       DEBIAN_FRONTEND: noninteractive
     steps:
