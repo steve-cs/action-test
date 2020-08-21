@@ -10,6 +10,7 @@ jobs:
       image: docker://ubuntu:20.04
     env:
       DEBIAN_FRONTEND: noninteractive
+      TZ: America/Los_Angeles
     steps:
     - name: Makefile
       run: |
