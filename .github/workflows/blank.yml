@@ -21,7 +21,7 @@ jobs:
       run: make depends
 
     - name: GCC
-      run: make gcc-jobs=1 gcc gcc-install gcc-build-clean
+      run: make gcc gcc-install gcc-build-clean
 
     - name: GPRbuild bootstrap
       run: make gprbuild-bootstrap-install 
