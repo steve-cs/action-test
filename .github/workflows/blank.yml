@@ -43,8 +43,12 @@ jobs:
         make gnatcoll-xref gnatcoll-xref-install
         make gnatcoll-gnatinspect gnatcoll-gnatinspect-install
         make gnatcoll-db-clean
+        
     - name: LibAdaLang
-      run: make libadalang libadalang-install libadalang-clean langkit-clean
+      run: |
+        make langkit langkit-install
+        make libadalang libadalang-install
+        make libadalang-clean langkit-clean
 
     - name: GTKAda
       run: make gtkada gtkada-install gtkada-clean
