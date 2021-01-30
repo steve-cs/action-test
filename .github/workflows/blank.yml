@@ -1,10 +1,10 @@
 name: CI
 on:
-  push:
+  workflow_dispatch:
   schedule:
     - cron:  '0 12 * * *'
 jobs:
-  job1:
+  bootstrap:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -58,3 +58,210 @@ jobs:
 
     - name: SPARK 2014
       run: make spark2014 spark2014-install spark2014-clean
+
+  gnat-builder:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+  xmlada:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make xmlada
+
+  gprbuild:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gprbuild
+      
+  gnatcoll-core:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gnatcoll-core
+
+  gnatcoll-bindings:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gnatcoll-bindings
+
+  gnatcoll-db:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gnatcoll-db
+
+langkit:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make langkit
+
+libadalang:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make libadalang
+
+gtkada:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gtkada
+
+gps:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make gps
+
+spark2014:
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
+    steps:
+    - name: Makefile
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+        apt-get -qq -y install git make
+        git clone https://github.com/steve-cs/gnat-builder.git
+        cp -r gnat-builder/* .
+
+    - name: Release
+      run: make release-install
+
+    - name: Build
+      run: make spark2014
+
