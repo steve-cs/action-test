@@ -170,7 +170,7 @@ jobs:
     - name: Build
       run: make gnatcoll-db
 
-langkit:
+  langkit:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -189,7 +189,7 @@ langkit:
     - name: Build
       run: make langkit
 
-libadalang:
+  libadalang:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -208,7 +208,7 @@ libadalang:
     - name: Build
       run: make libadalang
 
-gtkada:
+  gtkada:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -227,7 +227,7 @@ gtkada:
     - name: Build
       run: make gtkada
 
-gps:
+  gps:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -246,7 +246,7 @@ gps:
     - name: Build
       run: make gps
 
-spark2014:
+  spark2014:
     runs-on: ubuntu-18.04
     container: 
       image: docker://ubuntu:20.04
@@ -264,4 +264,3 @@ spark2014:
 
     - name: Build
       run: make spark2014
-
