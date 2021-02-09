@@ -24,7 +24,7 @@ jobs:
       run: make gcc gcc-install gcc-build-clean
 
     - name: GPRbuild bootstrap
-      run: make gprbuild-bootstrap-install 
+      run: make gprbuild-bootstrap gprbuild-bootstrap-install gprbuild-bootstrap-clean 
 
     - name: XML/Ada
       run: make xmlada xmlada-install xmlada-clean
