@@ -20,6 +20,9 @@ jobs:
     - name: Depends
       run: make depends
 
+    - name: Binutils
+      run: make binutils binutils-install binutils-clean
+
     - name: GCC
       run: make gcc gcc-install gcc-build-clean
 
