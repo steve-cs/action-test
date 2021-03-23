@@ -5,7 +5,9 @@ on:
     - cron:  '0 12 * * *'
 jobs:
   bootstrap:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
+    container: 
+      image: docker://ubuntu:20.04
     steps:
     - name: Makefile
       run: |
@@ -52,9 +54,7 @@ jobs:
       run: make gtkada gtkada-install gtkada-clean
 
     - name: GPS
-      run: |
-        make gps gps-install
-        make gps-clean libadalang-tools-clean ada_language_server-clean vss-clean spawn-clean
+      run: make gps gps-install gps-clean libadalang-tools-clean ada_language_server-clean
 
     - name: SPARK 2014
       run: make spark2014 spark2014-install spark2014-clean
