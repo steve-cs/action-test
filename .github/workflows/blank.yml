@@ -20,8 +20,8 @@ jobs:
     - name: Depends
       run: make depends
 
-    - name: Binutils
-      run: make binutils binutils-install binutils-clean
+    #- name: Binutils
+    #  run: make binutils binutils-install binutils-clean
 
     - name: GCC
       run: make gcc gcc-install gcc-build-clean
@@ -56,11 +56,11 @@ jobs:
     - name: GTKAda
       run: make gtkada gtkada-install gtkada-clean
 
-    - name: GPS
-      run: make gps gps-install gps-clean libadalang-tools-clean ada_language_server-clean
+    #- name: GPS
+    #  run: make gps gps-install gps-clean libadalang-tools-clean ada_language_server-clean
 
-    - name: SPARK 2014
-      run: make spark2014 spark2014-install spark2014-clean
+    #- name: SPARK 2014
+    #  run: make spark2014 spark2014-install spark2014-clean
 
   gnat-builder:
     runs-on: ubuntu-18.04
