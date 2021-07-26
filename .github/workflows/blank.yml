@@ -7,7 +7,7 @@ jobs:
   bootstrap:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -65,7 +65,7 @@ jobs:
   gnat-builder:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -81,7 +81,7 @@ jobs:
   xmlada:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -100,7 +100,7 @@ jobs:
   gprbuild:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -119,7 +119,7 @@ jobs:
   gnatcoll-core:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -138,7 +138,7 @@ jobs:
   gnatcoll-bindings:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -157,7 +157,7 @@ jobs:
   gnatcoll-db:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -176,7 +176,7 @@ jobs:
   langkit:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -195,7 +195,7 @@ jobs:
   libadalang:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -214,7 +214,7 @@ jobs:
   gtkada:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -233,7 +233,7 @@ jobs:
   gps:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
@@ -252,7 +252,7 @@ jobs:
   spark2014:
     runs-on: ubuntu-18.04
     container: 
-      image: docker://ubuntu:20.04
+      image: docker://ubuntu:21.04
     steps:
     - name: Makefile
       run: |
